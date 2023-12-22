@@ -1,19 +1,33 @@
 #include <stdio.h>
 
-int main() {
-    int n = 5;
-
-    for (int i = 1; i <= n; i++) {
-        int start = i;
-        int space = n - i;  
-        for (int j = 1; j <= space; j++) {
-            printf("  ");  
+int main()
+{
+    int n=5;
+    int odd = 1, even = 2;
+    for (int i = 1; i <= n; i++)
+    {
+        int start = odd;
+        int space = n - i;
+        for (int j = 1; j <= space; j++)
+        {
+            printf("  ");
         }
-        for (int j = 1; j <= i; j++) {
-            printf("%d ", start);
-            start += 2;
+        if (i % 2 != 0)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                printf("%d ", odd);
+                odd += 2;
+            }
         }
-
+        if (i % 2 == 0)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                printf("%d ", even);
+                even += 2;
+            }
+        }
         printf("\n");
     }
 
